@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const { connection } = require("./Config/db")
-const { postJobs, getJobs } = require("./Controllers/jobs.controller")
+const { postJobs, getJobs, getJobsbyQuery } = require("./Controllers/jobs.controller")
 require("dotenv").config()
 const PORT = process.env.PORT || 8080  
 
@@ -18,6 +18,8 @@ app.get("/" , (req,res)=>{
 app.post("/postjobs", postJobs)
 
 app.get("/jobs" , getJobs)
+
+app.get("/jobsbyquery",getJobsbyQuery)
 
 app.listen(PORT, async()=>{
     try{

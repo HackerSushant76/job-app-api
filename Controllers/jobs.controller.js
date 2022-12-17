@@ -11,7 +11,13 @@ const getJobs = async (req, res) => {
     const jobs = await Job.find()
     res.send(jobs)
 };
+const getJobsbyQuery = async (req, res) => {
+    const {role} = req.query
+    const jobs = await Job.find({role})
+    res.send(jobs)
+};
 module.exports = {
   postJobs,
   getJobs,
+  getJobsbyQuery
 };

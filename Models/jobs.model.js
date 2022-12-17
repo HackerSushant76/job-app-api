@@ -7,7 +7,7 @@ const jobSchema = mongoose.Schema({
     role: String,
     level: String,
     contract: String,
-    postion: String,
+    position: String,
     language: String
 },{
     timestamps: {
